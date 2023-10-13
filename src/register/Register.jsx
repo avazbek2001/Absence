@@ -50,11 +50,11 @@ function Register() {
       />}
       <form id='form' onSubmit={sendToTG}>
         <h3>Registration</h3>
-        <input type="text" value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder='Fullname' />
-        <input type="number" value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} placeholder='Phone number' />
-        <input type="text" value={branch} onChange={(e) => setBranch(e.target.value)} placeholder='Branch' />
-        <input type="text" value={daytime} onChange={(e) => setDaytime(e.target.value)} placeholder='Day Time' />
-        <input type="text" value={teachername} onChange={(e) => setTeachername(e.target.value)} placeholder='Teachername' />
+        <input type="text" required value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder='Fullname' />
+        <input type="number" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} placeholder='Phone number' />
+        <input type="text" required value={branch} onChange={(e) => setBranch(e.target.value)} placeholder='Branch' />
+        <input type="text" required value={daytime} onChange={(e) => setDaytime(e.target.value)} placeholder='Day Time' />
+        <input type="text" required value={teachername} onChange={(e) => setTeachername(e.target.value)} placeholder='Teachername' />
 
         <button type='submit'>Register</button>
         {/* <BsTelegram/> */}
