@@ -13,8 +13,6 @@ function Register() {
   const [daytime, setDaytime] = useState("")
   const [teachername, setTeachername] = useState()
   const [confetti, setconfetti] = useState(false)
-  const notify = () => toast("Siz muvaffaqqiyatli ro'yhatga olindingiz!");
-
 
   let width = window.innerWidth
   let heigh = window.innerHeight
@@ -24,8 +22,8 @@ function Register() {
 
     let message = `Full name: ${fullname} %0APhone number: ${phonenumber}  %0ABranch:${branch} %0Adaytime: ${daytime} %0Ateachername: ${teachername}`
 
-    let token = "6475787992:AAHipYlAQ4w2qHFcnHAUTH45-y1aB17PdgI"
-    let chat_id = "-1001940434149"
+    let token = '6909865165:AAFz3-4bVbj5-Q0yoNhr1Rsga6q0si0dPxg'
+    let chat_id = '-1002058773887'
     let url = `https://api.telegram.org/bot${token}/sendmessage?chat_id=${chat_id}&text=${message}`
     let api = new XMLHttpRequest()
     api.open("GET", url, true)
@@ -36,11 +34,14 @@ function Register() {
     setDaytime('')
     setTeachername('')
 
+
     setconfetti(true)
 
     setTimeout(() => {
       setconfetti(false)
     }, 4000);
+
+    toast.success("Ro'yhatdan Muvaffaqiyatli o'tdingiz!");
 
 
   }
@@ -59,8 +60,8 @@ function Register() {
         <input type="text" required value={branch} onChange={(e) => setBranch(e.target.value)} placeholder="O'quv binosi" />
         <input type="text" required value={daytime} onChange={(e) => setDaytime(e.target.value)} placeholder='Kuni Vaqti Darajasi' />
         <input type="text" required value={teachername} onChange={(e) => setTeachername(e.target.value)} placeholder="O'qituvchi Ismi" />
-        <button type='submit' onClick={notify}>Register</button>
-        <ToastContainer position='top-center'/>
+        <button className='btn_form' type='submit'  >Register</button>
+        <ToastContainer position='bottom-center' />
 
 
       </form>
