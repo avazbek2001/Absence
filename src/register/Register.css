@@ -1,15 +1,14 @@
 .register {
     width: 100%;
-    height: 100vh;
-    background-color: #1b1ff1;
+    height: 85vh;
+    background-color: dodgerblue;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .register form {
-    width: 300px;
-    height: auto;
+    width: 350px;
+    height: 420px;
     padding: 15px;
     display: flex;
     align-items: center;
@@ -20,12 +19,30 @@
     border-radius: 10px;
     text-align: center;
 }
-.register form h3{
+
+.register form h3 {
     color: rgb(0, 47, 255);
     font-weight: bold;
-    font-size: 22px;
+    font-size: 25px;
     letter-spacing: 3px;
-    text-shadow: 1px 1px 10px rgb(0, 238, 255);
+    text-shadow: 2px 2px 10px rgb(0, 238, 255);
+    animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        color: dodgerblue;
+        text-shadow: 2px 2px 10px white;
+    }
+
+    50% {
+        transform: translateX(0);
+        color: rgb(5, 67, 130);
+
+    }
 }
 
 .register form button,
@@ -36,12 +53,18 @@
     font-size: 17px;
     border: 1px solid dodgerblue;
     border-radius: 3px;
-    box-shadow: 1px 1px 10px rgb(0, 21, 255);
+    box-shadow: 1px 1px 10px dodgerblue;
 }
 
 .register form button {
     background-color: rgb(30, 255, 34);
     color: #fff;
     font-weight: bold;
+    height: 35px;
     cursor: pointer;
+    transition: .8s;
+}
+
+.register form button:hover {
+    transform: scale(1.1);
 }

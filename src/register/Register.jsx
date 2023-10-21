@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import "./Register.css"
 import Confetti from 'react-confetti'
 // import {BsTelegram} from 'react-icons/bs'
+import { BiUserPin } from 'react-icons/bi'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const [fullname, setFullname] = useState("")
@@ -10,6 +13,7 @@ function Register() {
   const [daytime, setDaytime] = useState("")
   const [teachername, setTeachername] = useState()
   const [confetti, setconfetti] = useState(false)
+  const notify = () => toast("Siz muvaffaqqiyatli ro'yhatga olindingiz!");
 
 
   let width = window.innerWidth
@@ -50,14 +54,13 @@ function Register() {
       />}
       <form id='form' onSubmit={sendToTG}>
         <h3>Registration</h3>
-        <input type="text" required value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder='Fullname' />
-        <input type="number" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} placeholder='Phone number' />
-        <input type="text" required value={branch} onChange={(e) => setBranch(e.target.value)} placeholder='Branch' />
-        <input type="text" required value={daytime} onChange={(e) => setDaytime(e.target.value)} placeholder='Day Time' />
-        <input type="text" required value={teachername} onChange={(e) => setTeachername(e.target.value)} placeholder='Teachername' />
-
-        <button type='submit'>Register</button>
-        {/* <BsTelegram/> */}
+        <input type="text" required value={fullname} onChange={(e) => setFullname(e.target.value)} placeholder='Ism Familiya' />
+        <input type="number" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} placeholder='99 226 23 23' />
+        <input type="text" required value={branch} onChange={(e) => setBranch(e.target.value)} placeholder="O'quv binosi" />
+        <input type="text" required value={daytime} onChange={(e) => setDaytime(e.target.value)} placeholder='Kuni Vaqti Darajasi' />
+        <input type="text" required value={teachername} onChange={(e) => setTeachername(e.target.value)} placeholder="O'qituvchi Ismi" />
+        <button type='submit' onClick={notify}>Register</button>
+        <ToastContainer position='top-center'/>
 
 
       </form>
